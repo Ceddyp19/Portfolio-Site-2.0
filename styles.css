@@ -1,0 +1,181 @@
+:root {
+    --primary-theme-color: rgb(36, 31, 31);
+    /* --secondary-theme-color: #5b5bde; */
+    --secondary-theme-color: #8c3434;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+#navbar {
+    position: fixed;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    background-color: var(--secondary-theme-color);
+    width: 100%;
+    height: 4rem;
+    font-size: 30px;
+    align-items: center;
+    margin: 0;
+    border-bottom: 10px solid black;
+
+}
+
+#navbar :hover {
+    color: aliceblue;
+}
+
+#welcome-section {
+    /* background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%); */
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: aliceblue;
+}
+
+#welcome-section h1 {
+    /* background-color: var(--secondary-theme-color); */
+    background-color: black;
+    font-size: 6em;
+    margin: 0;
+}
+
+#welcome-section h3 {
+    font-size: 2rem;
+    color: var(--secondary-theme-color);
+    /* color: #8c3434; */
+}
+
+/* #skills {
+    background-color: rebeccapurple;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    height: 20vh;
+} */
+
+#projects {
+    /* background-color: rgba(240, 248, 255, 0.801); */
+    color: aliceblue;
+    background-color: black;
+    border: 5px solid var(--secondary-theme-color);
+    border-radius: 7%;
+    margin: 2%;
+    height: 100vh;
+    padding: 5% 5% 10% 5%;
+    overflow-y: auto;
+}
+
+.project-header {
+    margin-bottom: 5%;
+    text-align: center;
+    font-size: 4rem;
+}
+
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+    grid-auto-rows: minmax(200px, auto);
+    /* grid-auto-flow: row; */
+    gap: 20px;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+@media (min-width: 1000px) {
+    .project-container {
+        grid-auto-rows: minmax(300px, auto);
+    }
+}
+
+@media (min-width: 800px) {
+    .project-container {
+        grid-auto-rows: minmax(250px, auto);
+    }
+}
+
+@media (max-width: 800px) {
+    .project-container {
+        grid-auto-rows: minmax(280px, auto);
+    }
+}
+
+#projects .project-tile {
+    background-color: var(--primary-theme-color);
+    border-radius: 5px;
+    color: whitesmoke;
+    text-align: center;
+}
+
+#contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    color: aliceblue;
+    font-size: 4rem;
+}
+
+
+
+
+
+/* A few media query to set some font sizes at different screen sizes.
+ * This helps automate a bit of responsiveness.
+ * The trick is to use the rem unit for size values, margin and padding.
+ * Because rem is relative to the document font size
+ * when we scale up or down the font size on the document
+ * it will affect all properties using rem units for the values.
+*/
+
+/* I am using the em unit for breakpoints
+ * The calculation is the following
+ * screen size divided by browser base font size
+ * As an example: a breakpoint at 980px
+ * 980px / 16px = 61.25em
+*/
+
+/* 1200px / 16px = 75em */
+@media (max-width: 75em) {
+    html {
+        font-size: 60%;
+    }
+}
+
+/* 980px / 16px = 61.25em */
+@media (max-width: 61.25em) {
+    html {
+        font-size: 58%;
+    }
+}
+
+/* 460px / 16px = 28.75em */
+@media (max-width: 28.75em) {
+    html {
+        font-size: 55%;
+    }
+}
